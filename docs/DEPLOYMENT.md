@@ -44,11 +44,11 @@ Replace `YOUR_USERNAME` and `wikitype` with your actual owner/repository name. I
 
 ## 4. Which URL will it use?
 
-| Repository | URL | Build `base` |
-|---|---|---|
-| `YOUR_USERNAME/wikitype` | `https://YOUR_USERNAME.github.io/wikitype/` | `/wikitype/` |
-| `YOUR_USERNAME/YOUR_USERNAME.github.io` | `https://YOUR_USERNAME.github.io/` | `/` |
-| Custom domain | Your domain | Set variable `VITE_BASE_PATH=/` |
+| Repository                              | URL                                         | Build `base`                    |
+| --------------------------------------- | ------------------------------------------- | ------------------------------- |
+| `YOUR_USERNAME/wikitype`                | `https://YOUR_USERNAME.github.io/wikitype/` | `/wikitype/`                    |
+| `YOUR_USERNAME/YOUR_USERNAME.github.io` | `https://YOUR_USERNAME.github.io/`          | `/`                             |
+| Custom domain                           | Your domain                                 | Set variable `VITE_BASE_PATH=/` |
 
 The workflow calculates `VITE_BASE_PATH` using the actual GitHub repository name and owner. An explicit **repository variable** named `VITE_BASE_PATH` overrides the automatic rule: visit **Settings → Secrets and variables → Actions → Variables → New repository variable**. For a custom domain serving at its root, set `/`. For a subdirectory, use `/subdir/` with both slashes. There are **no secrets** required.
 

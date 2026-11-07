@@ -11,7 +11,7 @@ Built entirely in the browser with React, strict TypeScript, resilient fetching,
 - Integrated the **Wikipedia MediaWiki API** directly from the browser with CORS-safe requests, response validation, bounded retries, cancellation, duplicate avoidance, article attribution, and clearly licensed offline fallback text.
 - Designed a **responsive, accessible single-page experience** featuring three test modes, locally persisted session history, SVG speed charts, automated Vitest/Playwright test coverage, and GitHub Actions workflows for CI and static GitHub Pages deployment.
 
-These describe implemented *code and workflows*; do not claim live deployment, passing CI, user growth, or measured performance wins before verifying them.
+These describe implemented _code and workflows_; do not claim live deployment, passing CI, user growth, or measured performance wins before verifying them.
 
 ## Portfolio description
 

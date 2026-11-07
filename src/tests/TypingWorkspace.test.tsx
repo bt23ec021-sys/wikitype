@@ -18,7 +18,7 @@ describe('test lifecycle', () => {
     const onRestart = vi.fn()
     const mounted = render(<TypingWorkspace key="first" passage={passage} settings={passageSettings} onExtend={() => null} onFinish={vi.fn()} onRestart={onRestart} onNew={vi.fn()} onSettings={vi.fn()} onHistory={vi.fn()}/> )
     fireEvent.change(screen.getByRole('textbox', { name: /type the passage/i }), { target: { value: 'He' } })
-    fireEvent.click(screen.getByRole('button', { name: 'Restart', exact: true }))
+    fireEvent.click(screen.getByRole('button', { name: 'Restart' }))
     expect(onRestart).toHaveBeenCalledOnce()
     mounted.rerender(<TypingWorkspace key="second" passage={passage} settings={passageSettings} onExtend={() => null} onFinish={vi.fn()} onRestart={onRestart} onNew={vi.fn()} onSettings={vi.fn()} onHistory={vi.fn()}/> )
     expect(screen.getByRole('textbox', { name: /type the passage/i })).toHaveValue('')
@@ -44,3 +44,5 @@ describe('test lifecycle', () => {
     expect(screen.getByText(/well typed/i)).toBeInTheDocument()
   })
 })
+
+

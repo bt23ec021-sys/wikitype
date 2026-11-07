@@ -25,13 +25,15 @@ origin=*
 ```json
 {
   "query": {
-    "pages": [{
-      "pageid": 12345,
-      "ns": 0,
-      "title": "Example article",
-      "extract": "An introductory paragraph about an example article...",
-      "fullurl": "https://en.wikipedia.org/wiki/Example_article"
-    }]
+    "pages": [
+      {
+        "pageid": 12345,
+        "ns": 0,
+        "title": "Example article",
+        "extract": "An introductory paragraph about an example article...",
+        "fullurl": "https://en.wikipedia.org/wiki/Example_article"
+      }
+    ]
   }
 }
 ```

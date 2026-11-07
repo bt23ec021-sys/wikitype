@@ -6,14 +6,14 @@
 
 **Passage:** Choose short (~150–250 graphemes), medium (~250–500), or long (~500–900), subject to available sentence boundaries. The test finishes when the text length is reached. Elapsed time is shown instead of a deadline.
 
-**Custom:** Enter or paste at least 30 characters into the *setup field*, then start. The custom text never goes to Wikipedia or any application server. This mode is completion-based, so length is your text rather than the passage-length selection.
+**Custom:** Enter or paste at least 30 characters into the _setup field_, then start. The custom text never goes to Wikipedia or any application server. This mode is completion-based, so length is your text rather than the passage-length selection.
 
 ## Controls and feedback
 
 - Use a physical or mobile keyboard in the typing area, or tap/click it to focus.
 - Untyped text is subtle, correct text is green, incorrect text is red and underlined, and the current position shows a cursor. Wrong spaces have a visible background.
 - Backspace and text selection/replacement follow native textarea behavior; visual output is a derived representation.
-- Paste/drop are disabled *during* the measured exercise. Paste is allowed when authoring custom practice text.
+- Paste/drop are disabled _during_ the measured exercise. Paste is allowed when authoring custom practice text.
 - Restart creates a new exercise with the **same** passage. New article requests a replacement Wikipedia excerpt (and exits custom mode). Changing mode or duration resets the active test.
 - Escape pauses a running test. Tab follows ordinary focus navigation. Enter activates a focused button. No global letter-key interception is used.
 - The remaining-time indicator applies only to timed mode; passage/custom mode displays elapsed time.

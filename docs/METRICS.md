@@ -14,20 +14,20 @@ Define:
 - `E`: inserted graphemes that did not match the target at their position, including corrected errors.
 - `L`: passage grapheme length.
 
-| Metric | Formula |
-|---|---|
-| **Adjusted WPM (primary)** | `(C / 5) / M` |
-| **Raw WPM** | `(T / 5) / M` |
-| **CPM** | `T / M` |
-| **Current-text accuracy (primary)** | `100 × C / T` |
-| **Keystroke accuracy** | `100 × (K − E) / K` |
-| **Correct characters** | `C` |
-| **Incorrect characters** | `I` |
-| **Total typed characters** | `T` |
-| **Standardized words** | `T / 5` (may be fractional) |
-| **Passage progress** | `min(100, 100 × T / L)` |
-| **Actual completed words** | Count lexical word spans completely covered and correct in current text. Uses `Intl.Segmenter` word mode and Unicode fallback. |
-| **Remaining time** | `max(0, configuredDurationMs − elapsedMs)` for timed tests |
+| Metric                              | Formula                                                                                                                        |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Adjusted WPM (primary)**          | `(C / 5) / M`                                                                                                                  |
+| **Raw WPM**                         | `(T / 5) / M`                                                                                                                  |
+| **CPM**                             | `T / M`                                                                                                                        |
+| **Current-text accuracy (primary)** | `100 × C / T`                                                                                                                  |
+| **Keystroke accuracy**              | `100 × (K − E) / K`                                                                                                            |
+| **Correct characters**              | `C`                                                                                                                            |
+| **Incorrect characters**            | `I`                                                                                                                            |
+| **Total typed characters**          | `T`                                                                                                                            |
+| **Standardized words**              | `T / 5` (may be fractional)                                                                                                    |
+| **Passage progress**                | `min(100, 100 × T / L)`                                                                                                        |
+| **Actual completed words**          | Count lexical word spans completely covered and correct in current text. Uses `Intl.Segmenter` word mode and Unicode fallback. |
+| **Remaining time**                  | `max(0, configuredDurationMs − elapsedMs)` for timed tests                                                                     |
 
 If `M = 0`, all rate metrics are 0 (never NaN or Infinity). If `T = 0`, current-text accuracy is 100% (no active errors); if `K = 0`, keystroke accuracy is also 100% by convention. Errors are positional: a wrong character is not forgiven just because it resembles a character elsewhere in the passage. Extra characters are incorrect. Missing expected characters beyond the current cursor affect **progress**, not accuracy, until typed.
 

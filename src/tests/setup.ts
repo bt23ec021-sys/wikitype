@@ -1,8 +1,14 @@
-import '@testing-library/jest-dom/vitest'
+﻿import '@testing-library/jest-dom/vitest'
 
-// jsdom versions do not all provide animation frames by default.
+Object.defineProperty(globalThis, 'localStorage', {
+  configurable: true,
+  value: window.localStorage,
+})
+
 if (typeof globalThis.requestAnimationFrame !== 'function') {
   globalThis.requestAnimationFrame = (callback: FrameRequestCallback): number =>
     setTimeout(() => callback(performance.now()), 16) as unknown as number
-  globalThis.cancelAnimationFrame = (id: number): void => clearTimeout(id)
+
+  globalThis.cancelAnimationFrame = (id: number): void =>
+    clearTimeout(id)
 }

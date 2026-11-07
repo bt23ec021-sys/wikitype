@@ -6,15 +6,15 @@ WikiType is a **static single-page application**. The production build consists 
 
 ## Module ownership
 
-| Area | Files | Responsibility |
-|---|---|---|
-| API | `src/services/wikipedia.ts` | Build URL, timeout, retries, validate JSON, mark provenance, deduplicate recently fetched pages |
-| Text | `src/utils/textProcessor.ts`, `src/utils/graphemes.ts` | Normalization, sentence segmentation, length targeting, grapheme indexing |
-| Metrics | `src/utils/typingMetrics.ts` | Pure speed/accuracy functions and history-independent keystroke accounting |
-| Persistence | `src/utils/storage.ts` | Versioned records, runtime validation, corrupted/blocked storage recovery |
-| Effects | `src/hooks/usePassages.ts`, `src/hooks/useTypingTest.ts`, `src/hooks/useTheme.ts` | Request cancellation/prefetch, monotonic clock/state machine, system theme |
-| UI | `src/components` | Controls, accessible input, styling, result visualization, history, attribution |
-| Coordinator | `src/App.tsx` | Selected settings, page navigation, restart generation, persisted sessions |
+| Area        | Files                                                                             | Responsibility                                                                                  |
+| ----------- | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| API         | `src/services/wikipedia.ts`                                                       | Build URL, timeout, retries, validate JSON, mark provenance, deduplicate recently fetched pages |
+| Text        | `src/utils/textProcessor.ts`, `src/utils/graphemes.ts`                            | Normalization, sentence segmentation, length targeting, grapheme indexing                       |
+| Metrics     | `src/utils/typingMetrics.ts`                                                      | Pure speed/accuracy functions and history-independent keystroke accounting                      |
+| Persistence | `src/utils/storage.ts`                                                            | Versioned records, runtime validation, corrupted/blocked storage recovery                       |
+| Effects     | `src/hooks/usePassages.ts`, `src/hooks/useTypingTest.ts`, `src/hooks/useTheme.ts` | Request cancellation/prefetch, monotonic clock/state machine, system theme                      |
+| UI          | `src/components`                                                                  | Controls, accessible input, styling, result visualization, history, attribution                 |
+| Coordinator | `src/App.tsx`                                                                     | Selected settings, page navigation, restart generation, persisted sessions                      |
 
 ## Data flow
 
@@ -48,7 +48,7 @@ The API hook owns separate AbortControllers for the active fetch and prefetch. N
 
 A native textarea is overlaid on a separately rendered visual passage. The native control handles keyboard layouts, focus, selection, mobile keyboards, composition, replacement text, and clipboard events; React `onChange` is the single source of truth. Visual positions and scoring use `Intl.Segmenter(..., { granularity: 'grapheme' })` where supported. A multi-code-point grapheme (including many emoji) is counted once. The fallback counts Unicode code points rather than UTF-16 code units.
 
-Paste and drag/drop are rejected for the *typing exercise*, but custom content entry intentionally permits paste. Shortcut handling is narrow: Escape pauses a running test, while the browser owns all other navigation shortcuts.
+Paste and drag/drop are rejected for the _typing exercise_, but custom content entry intentionally permits paste. Shortcut handling is narrow: Escape pauses a running test, while the browser owns all other navigation shortcuts.
 
 ## Deployment architecture
 
